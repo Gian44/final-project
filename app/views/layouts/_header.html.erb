@@ -1,0 +1,15 @@
+<div class="navbar bg-body-tertiary">
+    <nav>
+    <ul class="container-fluid">
+        <li class><%= link_to image_tag("logo.png", size: 35) + " Railbook", root_path, class: "navbar-brand" %></li>
+    </ul>
+    </nav>
+    <ul class="nav justify-content-end m-10">
+        <% if user_signed_in? %> 
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+        <% else %>
+            <%= button_to "Sign in", new_user_session_path %> 
+        <% end %>
+    </ul>
+</div>
+
